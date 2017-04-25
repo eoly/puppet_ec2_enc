@@ -1,13 +1,16 @@
+require 'puppet_ec2_enc/metadata'
+
 module PuppetEc2Enc
   class Instance
-    attr_accessor :ec2
+    attr_accessor :ec2, :region
 
-    def initialize
-      @ec2 = Aws::EC2::Client.new
+    def initialize(opts = {})
+      @region = opts[:region] || nil
+      @ec2    = Aws::EC2::Client.new(region: region)
     end
 
-    def self.client
-      self.new
+    def self.client(region)
+      self.new(region: region)
     end
 
     def by_private_dns(fqdn)
