@@ -2,4 +2,10 @@
 
 require 'puppet_ec2_enc'
 
-puts PuppetEc2Enc.generate
+raise ArgumentError.new(
+  'Usage: puppet_ec2_enc <node>'
+) unless ARGV.count == 1
+
+node = ARGV[0]
+
+puts PuppetEc2Enc.generate(node)
