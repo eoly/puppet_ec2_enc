@@ -2,12 +2,10 @@ require 'aws-sdk'
 
 module PuppetEc2Enc
   class EC2Tags
-    attr_accessor :instance_id, :region, :ec2
+    attr_accessor :instance
 
     def initialize(opts = {})
-      @instance_id = opts[:instance_id] if opts[:instance_id]
-      @region      = opts[:region] if opts[:region]
-      @ec2         = Aws::EC2::Resource.new(region: @region)
+      @instance = opts[:instance] if opts[:instance]
     end
 
     def tags
@@ -16,12 +14,6 @@ module PuppetEc2Enc
         tags[tag[:key]] = tag[:value]
       end
       tags
-    end
-
-    private
-
-    def instance
-      ec2.instance(instance_id)
     end
   end
 end
