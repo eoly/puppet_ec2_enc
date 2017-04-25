@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Eric Olsen"]
   spec.email         = ["eric@ericolsen.net"]
 
-  spec.summary       = %q{ENC for Standalone Puppet Nodes Running on EC2}
-  spec.description   = %q{ENC for Standalone Puppet Nodes Running on EC2}
+  spec.summary       = %q{ENC for Puppet Running on EC2}
+  spec.description   = %q{ENC for Puppet Running on EC2}
   spec.homepage      = "https://github.com/eoly/puppet_ec2_enc"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
