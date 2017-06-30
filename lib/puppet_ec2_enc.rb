@@ -13,7 +13,7 @@ module PuppetEc2Enc
     tags        = ec2tags.tags
     role_class  = tags.fetch('puppet_role_class')
     environment = tags.fetch('puppet_env')
-    enc         = PuppetEc2Enc::ENC.new(role_class: role, environment: environment)
+    enc         = PuppetEc2Enc::ENC.new(role_class: role_class, environment: environment)
     enc.output
   end
 end
