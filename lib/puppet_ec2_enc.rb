@@ -11,9 +11,9 @@ module PuppetEc2Enc
     instance    = client.by_private_dns(fqdn)
     ec2tags     = PuppetEc2Enc::EC2Tags.new(instance: instance)
     tags        = ec2tags.tags
-    role        = tags.fetch('puppet_role')
+    role_class  = tags.fetch('puppet_role_class')
     environment = tags.fetch('puppet_env')
-    enc         = PuppetEc2Enc::ENC.new(role: role, environment: environment)
+    enc         = PuppetEc2Enc::ENC.new(role_class: role, environment: environment)
     enc.output
   end
 end

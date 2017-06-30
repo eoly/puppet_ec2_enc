@@ -2,16 +2,16 @@ require 'yaml'
 
 module PuppetEc2Enc
   class ENC
-    attr_accessor :role, :environment
+    attr_accessor :role_class, :environment
 
     def initialize(opts = {})
-      @role        = opts[:role] || nil
+      @role_class  = opts[:role_class] || nil
       @environment = opts[:environment] || nil
     end
 
     def output
       classes = []
-      classes << "role::#{role}" if role
+      classes << "#{role_class}" if role_class
       { 'classes' => classes, 'environment' => environment }.to_yaml
     end
   end
