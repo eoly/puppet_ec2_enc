@@ -30,5 +30,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rake", "~> 10.0"
 
   spec.add_runtime_dependency "json_pure", '~> 2'
-  spec.add_runtime_dependency "aws-sdk", '~> 2'
+  spec.add_runtime_dependency "aws-sdk", '~> 3'
 end
